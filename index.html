@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DICUCIIN</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f7f9fc; color: #333; }
+    header { background: #007BFF; color: white; padding: 2em; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    .banner img { width: 100%; max-height: 400px; object-fit: cover; }
+    .content { padding: 2em; max-width: 800px; margin: auto; }
+    h2 { color: #007BFF; }
+    .cta a { background: #28a745; color: white; padding: 1em 2em; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    footer { background: #007BFF; color: white; text-align: center; padding: 1em; margin-top: 2em; }
+    form { display: flex; flex-direction: column; gap: 1em; margin-top: 2em; }
+    input, select, textarea { padding: 0.75em; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; }
+    button { background-color: #28a745; color: white; padding: 1em; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+  </style>
+  <script>
+    function sendToWhatsApp() {
+      var nama = document.getElementById('nama').value;
+      var alamat = document.getElementById('alamat').value;
+      var kendaraan = document.getElementById('kendaraan').value;
+      var waktu = document.getElementById('waktu').value;
+
+      var pesan = 'Halo, saya mau pesan jasa DICUCIIN.%0A%0ANama: ' + nama +
+                  '%0AAlamat: ' + alamat +
+                  '%0AKendaraan: ' + kendaraan +
+                  '%0AWaktu: ' + waktu;
+
+      var url = 'https://wa.me/6281380031847?text=' + pesan;
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>DICUCIIN</h1>
+  <p>Cuci Mobil & Motor Keliling – Kami Datang ke Lokasi Anda!</p>
+</header>
+
+<div class="banner">
+  <img src="dicuciin-banner.png" alt="DICUCIIN Banner">
+</div>
+
+<div class="content">
+  <p><strong>Daripada harus antri, kena macet, kena debu… lebih baik <span style="color:#007BFF;">#DICUCIIN</span> aja!</strong></p>
+
+  <h2>Form Pemesanan</h2>
+  <form onsubmit="event.preventDefault(); sendToWhatsApp();">
+    <input type="text" id="nama" placeholder="Nama Anda" required>
+    <textarea id="alamat" placeholder="Alamat Lengkap" required></textarea>
+    <select id="kendaraan" required>
+      <option value="">Pilih Jenis Kendaraan</option>
+      <option value="Motor">Motor</option>
+      <option value="Mobil Kecil">Mobil Kecil</option>
+      <option value="Mobil Besar">Mobil Besar (SUV/MPV)</option>
+    </select>
+    <input type="text" id="waktu" placeholder="Waktu / Jam (contoh: Besok jam 10 pagi)" required>
+    <button type="submit">Kirim via WhatsApp</button>
+  </form>
+
+  <h2>Layanan</h2>
+  <ul>
+    <li>Cuci motor — Rp30.000</li>
+    <li>Cuci mobil kecil — Rp50.000</li>
+    <li>Cuci mobil besar (SUV/MPV) — Rp70.000</li>
+    <li>Tambahan semir ban / poles kaca</li>
+  </ul>
+
+  <h2>Area Layanan</h2>
+  <p>Tangerang Kota dan sekitarnya</p>
+
+  <h2>Tentang Kami</h2>
+  <p>Saya Arif, penyedia jasa cuci kendaraan keliling yang siap datang ke rumah Anda. Praktis, cepat, dan bersih.</p>
+</div>
+
+<footer>
+  <p>&copy; 2025 DICUCIIN by Arif</p>
+</footer>
+
+</body>
+</html>
